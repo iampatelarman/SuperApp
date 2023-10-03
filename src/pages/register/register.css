@@ -1,0 +1,25 @@
+.register {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 100vh;
+}
+.img-side {
+  background: center/cover url("../../images/registerImg.png");
+  color: white;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+.img-side h1 {
+  margin-bottom: 4rem;
+  width: 90%;
+  font-size: 3rem;
+}
+
+.form-side {
+  background-color: black;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
