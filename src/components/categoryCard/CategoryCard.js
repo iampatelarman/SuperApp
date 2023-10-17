@@ -2,6 +2,7 @@ import React, { useState } from "react";
 
 const CategoryCard = ({ color, label, imgURL, handleClick, value }) => {
   const [selected, setSelected] = useState(false);
+
   return (
     <div
       className={
@@ -10,7 +11,7 @@ const CategoryCard = ({ color, label, imgURL, handleClick, value }) => {
       style={{ backgroundColor: color }}
       onClick={() => {
         setSelected(!selected);
-        handleClick(value, setSelected);
+        handleClick(value);
       }}
     >
       <h2>{label}</h2>

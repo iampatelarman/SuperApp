@@ -10,12 +10,18 @@ const Category = () => {
   const [selectedCategory, setSelectedCategory] = useState([]);
   const [showError, setShowError] = useState(false);
   const navigate = useNavigate();
+  let newDefaultCateory = [];
 
-  const handleClick = (value, setSelected) => {
+  const handleClick = (value) => {
     if (selectedCategory.includes(value)) {
       const newSelections = selectedCategory.filter((item) => item !== value);
       setSelectedCategory(newSelections);
-      setSelected(false);
+      newDefaultCateory = defaultCateory.map((item) => {
+        if (selectedCategory.includes(item.value)) {
+          return { ...item, isSelected: true };
+        }
+        return item;
+      });
     } else {
       setSelectedCategory([...selectedCategory, value]);
     }
@@ -25,7 +31,7 @@ const Category = () => {
     if (selectedCategory.length < 3) {
       setShowError(true);
     } else {
-      const newDefaultCateory = defaultCateory.map((item) => {
+      newDefaultCateory = defaultCateory.map((item) => {
         if (selectedCategory.includes(item.value)) {
           return { ...item, isSelected: true };
         }
